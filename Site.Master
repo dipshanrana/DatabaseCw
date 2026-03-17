@@ -1,0 +1,148 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DatabaseCw.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - KumariCinemas</title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            background: #f0f0f0;
+            color: #222;
+            margin: 0; padding: 0;
+        }
+        .site-nav {
+            background: #1a1a1a;
+            border-bottom: 3px solid #c0392b;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            height: 54px;
+        }
+        .nav-brand {
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin-right: 36px;
+            letter-spacing: 0.3px;
+        }
+        .nav-brand span { color: #c0392b; }
+        .nav-links {
+            display: flex; align-items: center;
+            gap: 2px; list-style: none; margin: 0; padding: 0;
+        }
+        .nav-links li { position: relative; }
+        .nav-links > li > a {
+            color: #bbb;
+            text-decoration: none;
+            padding: 0 13px;
+            height: 54px;
+            display: flex; align-items: center;
+            font-size: 0.86rem;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -3px;
+        }
+        .nav-links > li > a:hover { color: #fff; border-bottom-color: #c0392b; }
+        .nav-links .dropdown-toggle::after { content: ' \25BE'; font-size: 0.75rem; opacity: 0.5; }
+        .nav-links .drop-menu {
+            display: none; position: absolute; top: 100%; left: 0;
+            background: #262626; min-width: 210px;
+            border-top: 2px solid #c0392b;
+            z-index: 999; list-style: none; padding: 4px 0; margin: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .nav-links li:hover .drop-menu { display: block; }
+        .nav-links .drop-menu li a {
+            color: #bbb; display: block;
+            padding: 9px 16px; font-size: 0.84rem; text-decoration: none;
+        }
+        .nav-links .drop-menu li a:hover { background: #333; color: #fff; }
+        .site-body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 24px 60px;
+        }
+        .site-footer {
+            background: #1a1a1a;
+            color: #666;
+            text-align: center;
+            padding: 14px;
+            font-size: 0.78rem;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="site-nav">
+            <div class="nav-inner">
+                <a class="nav-brand" runat="server" href="~/">Kumari<span>Cinemas</span></a>
+                <ul class="nav-links">
+                    <li><a runat="server" href="~/">Home</a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">Basic Forms</a>
+                        <ul class="drop-menu">
+                            <li><a runat="server" href="~/UserDetails.aspx">Users</a></li>
+                            <li><a runat="server" href="~/TheatreCityHall.aspx">Theatre City Hall</a></li>
+                            <li><a runat="server" href="~/ShowTimeDetails.aspx">Showtimes</a></li>
+                            <li><a runat="server" href="~/MovieDetails.aspx">Movies</a></li>
+                            <li><a runat="server" href="~/Ticket.aspx">Tickets</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">Reports</a>
+                        <ul class="drop-menu">
+                            <li><a runat="server" href="~/UserTicket.aspx">User Ticket Report</a></li>
+                            <li><a runat="server" href="~/TheatreCityHallMovie.aspx">Theatre Hall Movies</a></li>
+                            <li><a runat="server" href="~/MovieTheatreOccupancy.aspx">Movie Occupancy (Top 3)</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="site-body">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="site-footer">
+            &copy; <%: DateTime.Now.Year %> KumariCinemas Management System
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
