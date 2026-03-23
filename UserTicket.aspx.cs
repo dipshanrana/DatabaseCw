@@ -1,9 +1,8 @@
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Configuration;
 using System.Data;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using Oracle.ManagedDataAccess.Client;
 
 namespace DatabaseCw
 {
@@ -52,7 +51,7 @@ namespace DatabaseCw
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             pnlError.Visible = false;
-            
+
             if (string.IsNullOrEmpty(ddlUser.SelectedValue))
             {
                 pnlUserInfo.Visible = false;
@@ -60,7 +59,7 @@ namespace DatabaseCw
                 return;
             }
 
-            try 
+            try
             {
                 int userId = int.Parse(ddlUser.SelectedValue);
                 LoadUserInfo(userId);
@@ -153,7 +152,7 @@ namespace DatabaseCw
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        if (row["TICKETSTATUS"].ToString().ToUpper() == "PAID" || 
+                        if (row["TICKETSTATUS"].ToString().ToUpper() == "PAID" ||
                             row["TICKETSTATUS"].ToString().ToUpper() == "BOOKED")
                         {
                             decimal price;

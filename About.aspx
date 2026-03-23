@@ -48,5 +48,10 @@
                 Our system focuses on efficiency, reliability, and ease of use, ensuring that theatre managers
                 can focus on delivering the best movie-going experience to their customers.
             </p>
+            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+                <h3 style="font-size: 1.2rem; color: #333; margin-bottom: 10px;">Our Location</h3>
+                <p style="font-size: 1rem; color: #555; margin-bottom: 5px;"><strong>Address:</strong> Bijayapur, Pokhara, Nepal</p>
+                <p style="font-size: 1rem; color: #555;"><strong>Phone:</strong> 98101010101</p>
+            </div>
         </div>
     </asp:Content>

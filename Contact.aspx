@@ -69,7 +69,7 @@
 
                 <div class="info-item">
                     <label>Corporate Office</label>
-                    <div class="val">Kamal Pokhari, Kathmandu<br />Bagmati Province, Nepal</div>
+                    <div class="val">Bijayapur, Pokhara<br />Gandaki Province, Nepal</div>
                 </div>
 
                 <div class="info-item">
@@ -79,7 +79,7 @@
 
                 <div class="info-item">
                     <label>Operations Helpdesk</label>
-                    <div class="val">+977 1-4XXXXXX (Sun-Fri, 9AM-5PM)</div>
+                    <div class="val">98101010101 (Sun-Fri, 9AM-5PM)</div>
                 </div>
             </div>
         </div>

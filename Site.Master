@@ -128,6 +128,8 @@
                             <li><a runat="server" href="~/MovieTheatreOccupancy.aspx">Movie Occupancy (Top 3)</a></li>
                         </ul>
                     </li>
+                    <li><a runat="server" href="~/About.aspx">About Us</a></li>
+                    <li><a runat="server" href="~/Contact.aspx">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
