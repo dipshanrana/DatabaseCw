@@ -246,13 +246,9 @@
                                     CssClass="validation-msg" Display="Dynamic" />
                             </div>
                             <div class="form-group">
-                                <label>Status:</label>
-                                <asp:DropDownList ID="ddlStatus" runat="server"
-                                    SelectedValue='<%# Bind("TICKETSTATUS") %>' CssClass="form-control">
-                                    <asp:ListItem Value="BOOKED">BOOKED</asp:ListItem>
-                                    <asp:ListItem Value="CANCELLED">CANCELLED</asp:ListItem>
-                                    <asp:ListItem Value="USED">USED</asp:ListItem>
-                                </asp:DropDownList>
+                                <label>Status (e.g. BOOKED, PAID, CANCELLED):</label>
+                                <asp:TextBox ID="TICKETSTATUSTextBox" runat="server" Text='<%# Bind("TICKETSTATUS") %>'
+                                    CssClass="form-control" />
                             </div>
                             <div style="margin-top: 24px; border-top: 1px solid #eee; padding-top: 20px;">
                                 <asp:LinkButton ID="UpdateButton" runat="server" CommandName="Update"
@@ -290,13 +286,9 @@
                                     CssClass="validation-msg" Display="Dynamic" />
                             </div>
                             <div class="form-group">
-                                <label>Status:</label>
-                                <asp:DropDownList ID="ddlStatusInsert" runat="server"
-                                    SelectedValue='<%# Bind("TICKETSTATUS") %>' CssClass="form-control">
-                                    <asp:ListItem Value="BOOKED">BOOKED</asp:ListItem>
-                                    <asp:ListItem Value="CANCELLED">CANCELLED</asp:ListItem>
-                                    <asp:ListItem Value="USED">USED</asp:ListItem>
-                                </asp:DropDownList>
+                                <label>Status (e.g. BOOKED, PAID, CANCELLED):</label>
+                                <asp:TextBox ID="TICKETSTATUSTextBox" runat="server" Text='<%# Bind("TICKETSTATUS") %>'
+                                    CssClass="form-control" />
                             </div>
                             <div style="margin-top: 24px; border-top: 1px solid #eee; padding-top: 20px;">
                                 <asp:LinkButton ID="InsertButton" runat="server" CommandName="Insert"
@@ -359,7 +351,7 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server"
             ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>"
             ProviderName="<%$ ConnectionStrings:ConnectionString2.ProviderName %>"
-            SelectCommand="SELECT * FROM TICKETS ORDER BY TICKETID DESC"
+            SelectCommand="SELECT TICKETID, BOOKINGID, SEATID, TICKETSTATUS, BOOKEDAT FROM TICKETS ORDER BY TICKETID DESC"
             DeleteCommand="DELETE FROM TICKETS WHERE TICKETID = :TICKETID"
             InsertCommand="INSERT INTO TICKETS (TICKETID, BOOKINGID, SEATID, TICKETSTATUS, BOOKEDAT) VALUES (:TICKETID, :BOOKINGID, :SEATID, :TICKETSTATUS, CURRENT_TIMESTAMP)"
             UpdateCommand="UPDATE TICKETS SET BOOKINGID = :BOOKINGID, SEATID = :SEATID, TICKETSTATUS = :TICKETSTATUS WHERE TICKETID = :TICKETID"
